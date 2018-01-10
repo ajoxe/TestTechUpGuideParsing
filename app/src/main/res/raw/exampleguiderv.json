@@ -1,0 +1,77 @@
+[
+  {
+    "name": "parsingJson",
+    "title": "Parsing JSON",
+    "description": "JSON despcription here...",
+    "steps": [
+      {
+        "step": "createAModel",
+        "title": "Create A Model",
+        "brief": "build a model to hold data from JSON",
+        "description": "//todo",
+        "examples": [
+          {
+            "title": "ModelExample.java",
+            "example": "model",
+            "code": "//todo"
+          }
+        ]
+      },
+      {
+        "step": "setJsonObject",
+        "title": "Set JSON object",
+        "brief": "create a joson object in parsing class",
+        "description": "//todo",
+        "examples": [
+          {
+            "title": "Activity.java",
+            "example": "activityJava",
+            "code": "//todo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "recyclerView",
+    "title": "RecyclerView",
+    "description": "RecyclerView despcription here...",
+    "steps": [
+      {
+        "step": "addRecyclerViewWidget",
+        "title": "Add RecyclerView Widget",
+        "brief": "add recycler view widget to hold display list items",
+        "description": "First, you need to add the recycler view dependency to your project’s grade module. Locate your build.gradle file in your project’s Android view. There will be two build.gradle files. Make sure you choose the build.gradle(Module: app) and not the build.gradle(Project: ) file. Under dependencies, add:\ncompile ‘com.android.support:recyclerview-v7:26.+'\n Your grade file should look like this:\ndependencies {\ncompile fileTree(include: ['*.jar'], dir: 'libs')     \nandroidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {         exclude group: 'com.android.support', module: 'support-annotations'     })     \ncompile 'com.android.support:appcompat-v7:26.+'\ncompile 'com.android.support:design:26.+'\ncompile 'com.android.support:recyclerview-v7:26.+'\ncompile 'com.android.support.constraint:constraint-layout:1.0.2'\ntestCompile 'junit:junit:4.12'     \ncompile 'com.google.code.gson:gson:2.2.4' } \n\nNext, locate your activity’s xml file and add the recycler view widget as a child view. You will need to add an id to the recycler view. It should look something like this:\n <android.support.v7.widget.RecyclerView         \nandroid:id=\"@+id/recycler_view\"\nandroid:layout_width=\"match_parent\"         \nandroid:layout_height=\"match_parent\"\nandroid:background=\"@color/light_gray\"         \nandroid:padding=\"10dp\"\nandroid:scrollbars=\"vertical\" /> \n\nFinally, instantiate the RecyclerView, as you would any other view, in your activity’s java file. RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view); ",
+        "examples": [
+          {
+            "example": "buildGradle",
+            "title": "build.gradle(Module: app)",
+            "code": "apply plugin: 'com.android.application' android {     compileSdkVersion 26     buildToolsVersion \"26.0.2\"     defaultConfig {         applicationId \"c4q.nyc.myapp\"         minSdkVersion 23         targetSdkVersion 26         versionCode 1         versionName \"1.0\"         testInstrumentationRunner \"android.support.test.runner.AndroidJUnitRunner\"     }     buildTypes {         release {             minifyEnabled false             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'         }     } } dependencies {     compile fileTree(include: ['*.jar'], dir: 'libs')     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {         exclude group: 'com.android.support', module: 'support-annotations'     })     compile 'com.android.support:appcompat-v7:26.+'     compile 'com.android.support:design:26.+'     compile 'com.android.support:recyclerview-v7:26.+'     compile 'com.android.support.constraint:constraint-layout:1.0.2'     testCompile 'junit:junit:4.12'     compile 'com.google.code.gson:gson:2.2.4' } "
+          },
+          {
+            "example": "activityXML",
+            "title":"activity.xml",
+            "code": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n <android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\nxmlns:app=\"http://schemas.android.com/apk/res-auto\"\nxmlns:tools=\"http://schemas.android.com/tools\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"match_parent\"\ntools:context=\"c4q.nyc.notesapp.MyActivity”>\n\n <android.support.v7.widget.RecyclerView\nandroid:id=\"@+id/recycler_view\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"match_parent\"\nandroid:background=\"@color/light_gray\"\nandroid:padding=\"10dp\"\nandroid:scrollbars=\"vertical\" />\n </android.support.constraint.ConstraintLayout>"
+          },
+          {
+            "example": "activityJava",
+            "title": "Activity.java",
+            "code": "package com.example.android.mypackage; import android.support.v7.app.AppCompatActivity; import android.os.Bundle; import android.support.v7.widget.RecyclerView; public class MainActivity extends AppCompatActivity {     @Override     protected void onCreate(Bundle savedInstanceState) {         super.onCreate(savedInstanceState);         setContentView(R.layout.activity_main);     RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);     } } "
+          }
+        ]
+      },
+      {
+        "step": "createAModel",
+        "title": "Create A Model",
+        "brief": "build a model class to respresent data in list items",
+        "description": "//todo",
+        "examples": [
+          {
+            "code": "//todo",
+            "example": "Example.java"
+          }
+        ]
+      }
+    ]
+  }
+]

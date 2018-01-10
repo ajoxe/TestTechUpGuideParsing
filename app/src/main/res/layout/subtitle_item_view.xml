@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp">
+
+    <TextView
+        android:id="@+id/subtitle_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subtitle"
+        android:textSize="24sp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"
+
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"/>
+
+    <TextView
+        android:id="@+id/subtitle_text_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guide Description here..."
+        android:textSize="18sp"
+        android:paddingBottom="16dp"
+        />
+
+    <Button
+        android:id="@+id/example_toggle_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:textColor="#a9a9a9"
+        android:text="Show Example"/>
+    <LinearLayout
+        android:id="@+id/example_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_dark_background"
+        android:padding="8dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/example_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_light_background"
+            android:text="Example Title"
+            android:padding="8dp"
+            android:gravity="end"
+            android:layout_marginBottom="16dp"/>
+        <TextView
+            android:id="@+id/example_code_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="example code here..."
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:fontFamily="monospace"/>
+
+    </LinearLayout>
+
+</LinearLayout>

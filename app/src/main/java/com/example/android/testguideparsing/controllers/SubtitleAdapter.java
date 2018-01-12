@@ -29,7 +29,6 @@ public class SubtitleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.subtitleList = subtitleList;
         this.articleTitleHeader = articleTitleHeader;
         this.articleDescriptionHeader = articleDescriptionHeader;
-
         this.exampleToggleClick = exampleToggleClick;
     }
 
@@ -55,9 +54,11 @@ public class SubtitleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((ArticleHeaderViewHolder) holder).articleDescription.setText(articleDescriptionHeader);
         } else if(holder instanceof SubtitleViewHolder){
             SubtitleViewHolder subtitleViewHolder = (SubtitleViewHolder) holder;
-            Subtitle subtitle = subtitleList.get(position - 1);
-            ((SubtitleViewHolder) holder).onBind(subtitle);
+            Subtitle subtitle = subtitleList.get(position -1);
+            ((SubtitleViewHolder) holder).exampleLinearLayout.setTag(subtitle.getExample());
             ((SubtitleViewHolder) holder).exampleToggleButton.setOnClickListener(exampleToggleClick);
+            ((SubtitleViewHolder) holder).onBind(subtitle);
+            holder.setIsRecyclable(false);
         }
 
     }

@@ -37,8 +37,6 @@ public class SubtitleViewHolder extends RecyclerView.ViewHolder{
         subtitleTitle.setText(subtitle.getTitle());
         subtitleText.setText(subtitle.getText());
         exampleToggleButton.setTag(subtitle.getExample());
-        exampleLinearLayout.setTag(subtitle.getExample());
-        exampleLinearLayout.setVisibility(View.GONE);
     }
 
 
